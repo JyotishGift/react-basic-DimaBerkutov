@@ -38,13 +38,11 @@ let PanelInfo = (props) => {
             </div>
     )
 };
-let Page = () => {
-    let page;
-    return page = <PanelInfo name = "USER FULL NAME !"/>;
-};
 const Button = document.querySelector('.button').addEventListener('click', () => {let page;
     console.log('click')
-    return <Page />, mountNode
+    PanelInfo += <PanelInfo name = "USER FULL NAME !"/>;
+    console.log(PanelInfo)
+    return ReactDOM.render(<PanelInfo />, mountNode);
 });
 const mountNode = document.body.querySelector('.app');
-ReactDOM.render(<Page />, mountNode);
+ReactDOM.render(<PanelInfo name = "USER FULL NAME !"/>, mountNode);
