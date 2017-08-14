@@ -4,10 +4,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import css from '../css/style.css';
 
 // user info
-let TableTr = (str, val) => {
+let TableTr = (str) => {
     return (<tr>
                 <td>{str.str}</td>
-                <td>{val.val}</td>
+                <td>{str.value}</td>
             </tr>
     )
 };
@@ -30,10 +30,10 @@ let PanelInfo = (props) => {
                                 <div className=" col-md-9 col-lg-9">
                                     <table className="table table-user-information">
                                         <tbody>
-                                            {<TableTr str = "Дата рождения" val = "24.10.2016"/>}
-                                            {<TableTr str = "Пол" val = "MALE"/>}
-                                            {<TableTr str = "Адрес" val = "GOOGLE STREET"/>}
-                                            {<TableTr str = "Email" val = "EMAIL"/>}
+                                            <TableTr str = "Дата рождения" value = "24.10.2016"/>
+                                            <TableTr str = "Пол" value = "MALE"/>
+                                            <TableTr str = "Адрес" value = "GOOGLE STREET"/>
+                                            <TableTr str = "Email" value = "EMAIL"/>
                                         </tbody>
                                     </table>
                                 </div>
@@ -54,8 +54,8 @@ let Button = () => {
 const Main = () => {
     return (
         <div>
-            {<PanelInfo name = "USER FULL NAME !" val = {id}/>}
-            {<Button />}
+            <PanelInfo name = "USER FULL NAME !" val = {id}/>
+            <Button />
         </div>
     )
 };
