@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import css from '../css/style.css';
 
-let tableTr = (str, val) => {
+let TableTr = (str, val) => {
     return (<tr>
-                <td>{str}</td>
-                <td>{val}</td>
+                <td>{str.str}</td>
+                <td>{val.val}</td>
             </tr>
     )
 };
 let PanelInfo = (props) => {
-    let userInfo = ['Дата рождения', 'Пол', 'Адрес', 'Email'];
-    return (<div className="panel panel-info">
+    return (
+            <div className="panel panel-info">
                 <div className="panel-heading">
                     <h3 className="panel-title">{props.name}</h3>
                 </div>
@@ -25,10 +25,10 @@ let PanelInfo = (props) => {
                             <div className=" col-md-9 col-lg-9">
                                 <table className="table table-user-information">
                                     <tbody>
-                                        {tableTr('Дата рождения', '24.10.2016')}
-                                        {tableTr('Пол', 'MALE')}
-                                        {tableTr('Адрес', 'GOOGLE STREET')}
-                                        {tableTr('Email', 'EMAIL')}
+                                        {<TableTr str = "Дата рождения" val = "24.10.2016"/>}
+                                        {<TableTr str = "Пол" val = "MALE"/>}
+                                        {<TableTr str = "Адрес" val = "GOOGLE STREET"/>}
+                                        {<TableTr str = "Email" val = "EMAIL"/>}
                                     </tbody>
                                 </table>
                             </div>
@@ -38,11 +38,26 @@ let PanelInfo = (props) => {
             </div>
     )
 };
-const Button = document.querySelector('.button').addEventListener('click', () => {let page;
-    console.log('click')
-    PanelInfo += <PanelInfo name = "USER FULL NAME !"/>;
-    console.log(PanelInfo)
-    return ReactDOM.render(<PanelInfo />, mountNode);
-});
+
+let Button = () => {
+    return <button type="button" className="button">Add user</button>
+};
+
+const Main = (newUser) => {
+    console.log('newUser.user', newUser.user)
+    return (
+        <div>
+            {/* {...newUser.user} */}
+            {<PanelInfo name = "USER FULL NAME !" />}
+            {<Button />}
+        </div>
+    )
+};
+
 const mountNode = document.body.querySelector('.app');
-ReactDOM.render(<PanelInfo name = "USER FULL NAME !"/>, mountNode);
+ReactDOM.render(<Main  user = ""/>, mountNode);
+
+const buttonClick = document.querySelector('.button').addEventListener('click', () => {
+    let users = document.querySelectorAll('.panel.panel-info');
+    ReactDOM.render(<Main  user = {users}/>, mountNode);
+});
