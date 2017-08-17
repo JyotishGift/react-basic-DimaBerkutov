@@ -21,16 +21,16 @@ class App extends Component {
       };
       this.videoState = this.videoState;
       YTSearch({ key: API_KEY, term: 'matrix' }, data => {
-          this.state.videos = data;
-          this.updateVideoState();
+          this.updateVideoState(data);
       });
   }
-  updateVideoState(){
+  updateVideoState(data){
     return this.setState(prevState => {
       return {
-        id: this.state.videos[0].id.videoId,
-        title: this.state.videos[0].snippet.title,
-        description: this.state.videos[0].snippet.description
+        videos: data,
+        id: data[0].id.videoId,
+        title: data[0].snippet.title,
+        description: data[0].snippet.description
       };
     });
   }
