@@ -12,44 +12,40 @@ const API_KEY = `AIzaSyC1ORL6Y3zxvLLev6QHUqP8eF1hFbYo1WI`;
 class App extends Component {
   constructor(){
     super();
-    this.state = {
-      url: 'https://www.youtube.com/embed/',
-      videos: [],
-      id: null,
-      videoDetail: null
-    };
-    YTSearch({ key: API_KEY, term: 'matrix' }, data => {
-        console.log(data);
-        this.state.videos = data;
-        // this.updateSideoState();
-        console.log('Video', this.state.url, this.state.videos[0]);
-        this.updateSideoState();
-    });
+     this.url = 'https://www.youtube.com/embed/';
+      this.state = {
+        videos: [],
+        id: null,
+        title: null,
+        description: null
+      };
+      this.videoState = this.videoState;
+      YTSearch({ key: API_KEY, term: 'matrix' }, data => {
+          this.state.videos = data;
+          this.updateVideoState();
+      });
   }
-  updateSideoState(){
-        // <Video url = {this.state.url} video = {this.state.videos[0]}/>
+  updateVideoState(){
     return this.setState(prevState => {
-      return {id: this.state.videos[0].id.videoId};
+      return {
+        id: this.state.videos[0].id.videoId,
+        title: this.state.videos[0].snippet.title,
+        description: this.state.videos[0].snippet.description
+      };
     });
   }
   render() {
-      console.log('this.state.videos.id', this.state.videos.id)
     return (
       <main className="container">
         <Search />
-
         <div className="row">
-          <div className="video-detail col-md-8">
-            <div className="embed-responsive embed-responsive-16by9">
-              <iframe title="random" src={this.state.url + this.state.id}></iframe>
-            </div>
-
-            <div className="details">
-              <div>TITLE</div>
-              <div>DESCRIPTION</div>
-            </div>
-          </div>
-          <VideoList videos = {this.state.videos} url = {this.state.url}/>
+          <Video id = {
+            this.state.id} 
+            title = {this.state.title} 
+            description = {this.state.description} 
+            url = {this.url} 
+          /> 
+          <VideoList videos = {this.state.videos} url = {this.url} updateVideoState = {this.updateVideoState}/>
         </div>
       </main>
     );

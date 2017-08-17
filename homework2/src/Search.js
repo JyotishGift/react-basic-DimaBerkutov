@@ -6,7 +6,7 @@ class Search extends Component{
             <div className="search-bar navbar">
                 <input type="text" placeholder="Search" />
             </div>
-        )
+        );
     }
 }
 

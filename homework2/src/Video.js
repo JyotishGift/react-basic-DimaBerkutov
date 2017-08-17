@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 
 
 class Video extends Component {
-    constructor(){
-        super();
-      console.log('url videof dsafdsfadsfadsf')
-    }
     render(){
-        const { url, video } = this.param;
-      console.log('url video', url, video)
+        const { id, title, description, url, } = this.props;
         return (
-            <iframe title="random" src={url + video.id.videoId}></iframe>
+          <div className="video-detail col-md-8">
+            <div className="embed-responsive embed-responsive-16by9">
+                <iframe title={ title } src={url + id}></iframe>
+            </div>
+            <div className="details">
+              <div>{ title }</div>
+              <div>{ description }</div>
+            </div>
+          </div>
         );
     }
 }
