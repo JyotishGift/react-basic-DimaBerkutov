@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import DebounceInput from 'react-debounce-input';
 
 class Search extends Component{
     render(){
+        let { searchChange } = this.props;
         return (
             <div className="search-bar navbar">
-                <input type="text" placeholder="Search" />
+                <DebounceInput minLength={2} debounceTimeout={1000} onChange = {searchChange} type="text" placeholder="Search" />
             </div>
         );
     }

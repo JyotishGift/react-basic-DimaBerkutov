@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 
 class SingleVideo extends Component{
   render(){
-      const { video, url, updateVideoState } = this.props;
-      console.log('video', video)
-      console.log('updateVideoState', updateVideoState)
+      const { video, updateVideo } = this.props;
       return (
           <div className="video-list media">
             <div className="video-list media">
-              <div className="media-left">                  
-                <iframe title="{ title }" src={url + video.id.videoId}></iframe> 
-                <img onClick={updateVideoState} className="media-object" src={url + video.id.videoId} alt="video" />   
-                  {/* <button onClick={updateVideoState}>Button</button> */}
-                  {/* <img className="media-object" src={url + video.id.videoId} alt="video" />  */}
+              <div className="media-left">
+                <img onClick={updateVideo.bind(this, video)} className="media-object" src={video.snippet.thumbnails.medium.url} alt="video" />
               </div>
             </div>
             <div className="media-body">
