@@ -3,7 +3,11 @@ import YTSearch from 'youtube-api-search';
 import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 import '../node_modules/react-spinner/react-spinner.css'
+import '../node_modules/react-spinner/build/index.js'
+import Spinner from  '../node_modules/react-spinner/index.jsx';
+
 import Search from  './Search';
 import Video from  './Video';
 import VideoList from  './VideoList';
@@ -26,7 +30,7 @@ class App extends Component {
   }
   componentWillMount(){
     YTSearch({ key: API_KEY, term: this.videoSearch }, data => {
-      if(!data) return (<div>Loading...</div>)
+      // if(!data) return (<div>Loading...</div>)
         this.updateVideoState(data);
     });
   }

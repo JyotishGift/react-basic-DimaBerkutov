@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class Video extends Component {
     render(){
-        const { id, title, description, url, } = this.props;
+        // const { id, title, description, url, } = this.props;
         return (
           <div className="video-detail col-md-8">
             {this.props.children}
