@@ -30,7 +30,6 @@ class App extends Component {
   }
   componentWillMount(){
     YTSearch({ key: API_KEY, term: this.videoSearch }, data => {
-      // if(!data) return (<div>Loading...</div>)
         this.updateVideoState(data);
     });
   }
@@ -58,6 +57,7 @@ class App extends Component {
     this.componentWillMount();
   }
   render() {
+    if(!this.state.videos.length) return (<div>Loading...</div>)
     return (
       <main className="container">
         <Search searchChange = {this.searchChange}/>
