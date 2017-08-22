@@ -13,13 +13,14 @@ class App extends Component {
     };
   }
 
-  update(val) {
+  update(some, val) {
+    // console.log('some:', some, 'val:', val)
     return this.setState(prevState => {
       return {activeTab: val}
     })
 
   }
-  componentDidUpdate(){
+  updateComponent(){
     switch(this.state.activeTab){
       case 1:
       return <MyGit />
@@ -36,7 +37,7 @@ class App extends Component {
         <button onClick={this.update.bind(this, 1)}>1</button>
         <button onClick={this.update.bind(this, 2)}>2</button>
         <button onClick={this.update.bind(this, 3)}>3</button>
-        {this.componentDidUpdate()}
+        {this.updateComponent()}
       </div>
     );
   }
