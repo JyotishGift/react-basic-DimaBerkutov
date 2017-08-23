@@ -9,18 +9,19 @@ class Header extends Component {
       <div className="Header">
 
         <ul>
-            {/* <Link to="/" exact>LOGO</Link> */}
-            <a href="#"><img src={logo}/></a>
+            <Link to="/"><img src={logo} alt="logo" /></Link>
+            {/* <a href="#"><img src={logo} alt="logo" /></a> */}
             <li>
-            <Link to="/">Page1</Link>
+            <Link to="/signin">SignIn</Link>
                 {/* <a href="#">SIGN IN</a> */}
             </li>
             <li>
-              <Link to="/page2">Page2</Link>
+              <Link to="/signup">SignUp</Link>
                 {/* <a href="#">SIGN UP</a> */}
             </li>
             <li>
-                <a href="#">SIGN OUT</a>
+              <Link to="/signout">SignOut</Link>
+                {/* <a href="#">SIGN UP</a> */}
             </li>
         </ul>
       </div>

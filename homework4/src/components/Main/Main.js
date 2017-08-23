@@ -4,9 +4,11 @@ import Router from '../../router';
 
 class Main extends Component {
   render() {
+    // const { signInUp } = this.props;
     return (
       <div className="Main">
         <Router />
+        {/* <Router signInUp = {signInUp}/> */}
       </div>
     );
   }
