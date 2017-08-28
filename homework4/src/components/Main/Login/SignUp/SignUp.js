@@ -22,11 +22,12 @@ class SignUp extends Component {
         });
     }
     signUpConfirm(email, name, password, confirmPassword){
-        if(email.length !== 0 && name.length !==0 && password.length !==0 &&  confirmPassword.length !== 0){
-            if(password == confirmPassword) api.signIn(email, name, password, 'signup');
-            else alert('Passwords are not same!');
-        }else alert('Please, enter login and password');
+        // if(email.length !== 0 && name.length !==0 && password.length !==0 &&  confirmPassword.length !== 0){
+        //     if(password == confirmPassword) api.signIn(email, name, password, 'signup');
+        //     else alert('Passwords are not same!');
+        // }else alert('Please, enter login and password');
 
+        api.signIn(email, name, password, 'signup');
         // api.signIn.bind(this, this.state.name, this.state.password, 'signin');
         // console.log('qeqwrweqrqewytreqrewrqtreqterwqtyyreqewtwryqreyreyerqyr', SignInUp)
     }

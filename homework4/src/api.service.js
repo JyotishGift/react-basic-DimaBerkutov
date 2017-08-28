@@ -21,42 +21,41 @@ class Api {
 signUp(email, name, pass, request){
     const url = 'http://api.jyotish.gift/api/v1/auth/';
     console.log('signIn', email, name, pass, url + request);
-    // return fetch(url + request, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({
-    //       email: `dima@berkutov.com`,
-    //       user: 'DimaBerkutov',
-    //       password: 'qqqqwwww'
-    //     })
-    // }).then(response => {
-    //     if(response.status === 200) alert('Successfully logged in!');
-    //     else return alert('Error:', response);
-    // }).catch(e => {
-    //     console.log(e);
-    // });
+    return fetch(url + request, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: `dima@berkutov.com`,
+          user: 'DimaBerkutov',
+          password: 'qqqqwwww'
+        })
+    }).then(response => {
+        if(response.status === 200) alert('Successfully logged in!');
+        else return alert('Error:', response);
+    }).catch(e => {
+        console.log(e);
+    });
   }
   signIn(name, pass, request){
     const url = 'http://api.jyotish.gift/api/v1/auth/';
     console.log('signIn',name, pass, url + request);
-    // return fetch(`${url}`, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //         // 'Content-Type': 'application/x-www-form-urlencoded'
-    //     },
-    //     body: JSON.stringify({
-    //       user: 'sa',
-    //       password: 'admin'
-    //     })
-    // }).then(response => {
-    //     if(response.status === 200) alert('Successfully logged in!');
-    //     else return alert('Error:', response);
-    // }).catch(e => {
-    //     console.log(e);
-    // });
+    return fetch(url + 'login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          user: 'sa',
+          password: 'admin'
+        })
+    }).then(response => {
+        if(response.status === 200) alert('Successfully logged in!');
+        else return alert('Error:', response);
+    }).catch(e => {
+        console.log(e);
+    });
   }
 }
 

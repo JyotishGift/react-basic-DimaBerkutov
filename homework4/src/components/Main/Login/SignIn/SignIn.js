@@ -20,9 +20,10 @@ class SignIn extends Component {
         });
     }
     signInConfirm(name, password){
-        name.length !==0 && password.length !==0 ?
-        api.signIn(name, password, 'signin') :
-        alert('Enter correct login and password');
+        // name.length !==0 && password.length !==0 ?
+        // api.signIn(name, password, 'signin') :
+        // alert('Enter correct login and password');
+        api.signIn(name, password, 'login');
         // api.signIn.bind(this, this.state.name, this.state.password, 'signin');
         // console.log('qeqwrweqrqewytreqrewrqtreqterwqtyyreqewtwryqreyreyerqyr', SignInUp)
     }
