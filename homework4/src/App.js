@@ -6,12 +6,12 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
+  state = {
+    data: ''
+  };
   constructor(){
     super();
     // this.url = 'http://api.jyotish.gift/api/v1/auth/signup';
-    this.state = {
-      data: ''
-    };
     // this.signInUp();
     console.log('this.state', this.state)
   }

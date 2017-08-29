@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import api from '../../../../api.service';
+import Api from '../../../../api.service';
 import './SignUp.css';
 
 class SignUp extends Component {
-    constructor(){
-        super();
-        this.state = {
-            email: '',
-            name: '',
-            password: '',
-            confirmPassword: ''
-        };
-        this.updateInput = this.updateInput.bind(this);
-    }
-    updateInput(e){
+    state = {
+        email: '',
+        name: '',
+        password: '',
+        confirmPassword: ''
+    };
+    updateInput = (e) => {
         const someName = e.target.name,
             someValue = e.target.value;
         return this.setState(prevState => {
@@ -21,15 +17,24 @@ class SignUp extends Component {
             return { [someName]: someValue };
         });
     }
-    signUpConfirm(email, name, password, confirmPassword){
-        // if(email.length !== 0 && name.length !==0 && password.length !==0 &&  confirmPassword.length !== 0){
-        //     if(password == confirmPassword) api.signIn(email, name, password, 'signup');
-        //     else alert('Passwords are not same!');
-        // }else alert('Please, enter login and password');
+    signUpConfirm = () => {
+        if(
+            this.state.email.length !== 0 && 
+            this.state.name.length !==0 && 
+            this.state.password.length !==0 &&  
+            this.state.confirmPassword.length !== 0
+        ){
+            this.state.password == this.state.confirmPassword ?
+            Api.signInUp(
+                {
+                    email: this.state.email, 
+                    user: this.state.name, 
+                    password: this.state.password
+                }, 'signup') :
+            alert('Passwords are not same!');
+        }else alert('Please, enter login and password');
 
-        api.signIn(email, name, password, 'signup');
-        // api.signIn.bind(this, this.state.name, this.state.password, 'signin');
-        // console.log('qeqwrweqrqewytreqrewrqtreqterwqtyyreqewtwryqreyreyerqyr', SignInUp)
+        
     }
     render() {
         return (
@@ -44,15 +49,8 @@ class SignUp extends Component {
                 <label htmlFor="confirmPassword">Confirm password: </label>
                 <input onChange={this.updateInput} type="text" id="confirmPassword" name="confirmPassword" />
                 <button type="button" onClick={
-                    this.signUpConfirm.bind(this,
-                        this.state.email, 
-                        this.state.name, 
-                        this.state.password, 
-                        this.state.confirmPassword)
+                    this.signUpConfirm
                     }>SignUp</button>
-                {/* <button type="button" onClick={
-                    api.signUp.bind(this, this.state.email, this.state.name, this.state.password, 'signup')
-                    }>SignUp</button> */}
             </form>
         </div>
         );

@@ -8,7 +8,6 @@ class Main extends Component {
     return (
       <div className="Main">
         <Router />
-        {/* <Router signInUp = {signInUp}/> */}
       </div>
     );
   }
