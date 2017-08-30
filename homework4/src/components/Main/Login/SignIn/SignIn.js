@@ -5,7 +5,7 @@ import './SignIn.css';
 class SignIn extends Component {
     state = {
         name: '',
-        password: ''
+        password: '',
     };
     updateInput = (e) => {
         const someName = e.target.name,
@@ -31,19 +31,23 @@ class SignIn extends Component {
         //         password: this.state.password
         //     }, 'login');
     }
-  render() {
-    return (        
-      <div className="SignIn">
-          <form>
-              <label htmlFor="name">Name: </label>
-              <input onChange={this.updateInput} type="text" id="name" name="name" required />
-              <label htmlFor="password">Password: </label>
-              <input onChange={this.updateInput} type="text" id="password" name="password" required />
-              <button id="login" type="button" onClick={this.signInConfirm}>SignIn</button>
-          </form>
-      </div>
-    );
-  }
+    render() {
+        const { signInConfirm } = this.props;
+        return (
+            // this.state.access === 'approved'?
+            // <Redirect to={`/`} /> :  
+        <div className="SignIn">
+            <form>
+                <label htmlFor="name">Name: </label>
+                <input onChange={this.updateInput} type="text" id="name" name="name" required />
+                <label htmlFor="password">Password: </label>
+                <input onChange={this.updateInput} type="text" id="password" name="password" required />
+                <button id="login" type="button" onClick={this.signInConfirm}>SignIn</button>
+                {/* <button id="login" type="button" onClick={signInConfirm}>SignIn</button> */}
+            </form>
+        </div>
+        );
+    }
 }
 
 export default SignIn;

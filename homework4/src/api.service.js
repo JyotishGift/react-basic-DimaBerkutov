@@ -10,7 +10,7 @@ class Api {
     axios.post(url + request, reqestBody)
     .then(response => {
       console.log('reqestBody', reqestBody);
-      if(response.status === 200) alert('Successfully logged in!');
+      if(response.status === 200 && response.status === 201) alert('Successfully logged in!');
       else return alert('Error:', response);
     })
     .catch(e =>{

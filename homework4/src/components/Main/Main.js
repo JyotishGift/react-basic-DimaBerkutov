@@ -4,10 +4,11 @@ import Router from '../../router';
 
 class Main extends Component {
   render() {
-    // const { signInUp } = this.props;
+    const { signInConfirm  } = this.props;
     return (
       <div className="Main">
-        <Router />
+        {/* <Router /> */}
+        <Router signInConfirm = {this.signInConfirm}/>
       </div>
     );
   }
