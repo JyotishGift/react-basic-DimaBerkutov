@@ -2,22 +2,25 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class HistoryCounter extends Component {
-  render() {
-    // const { counter } = this.props;
-    //   console.log('counter', counter)
-      
-      const { historyBlock } = this.props;
-      console.log('historyBlock', historyBlock)
+  render() {      
+    const { historyBlock, counter } = this.props;
+    historyBlock.push(counter);
     return (
-        <div>{historyBlock}</div>
+        <ul>
+          {
+            historyBlock.map((elem, index) => {
+              return <li key={index}>{elem}</li>
+            })
+          }
+        </ul>
     );
   }
 }
 
 const mapStareToProps = state => {
-  console.log('state', state)
     return {
-        historyBlock: state.historyBlock
+      historyBlock: state.historyReducer.historyBlock,
+      counter: state.counterReducer.counter
     };
 };
 
