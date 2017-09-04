@@ -1,6 +1,6 @@
 const searchReducer = (state = [], action) => {
     switch (action.type) {
-        case 'BOOKS_SEARCH':
+        case 'DISHES_SEARCH':
             return action.data
         default:
             return state;

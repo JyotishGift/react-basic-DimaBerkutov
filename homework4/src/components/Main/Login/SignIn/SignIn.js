@@ -15,14 +15,26 @@ class SignIn extends Component {
             return { [someName]: someValue };
         });
     }
+    async componentDidMount (){
+        const users = await Api.signInUp(
+            {
+                user: 'DimaBerkutov',
+                password: 'qqqqwwww'
+            }, 'login');
+        console.log('users', users)
+    }
     signInConfirm = () => {
         this.state.name.length !== 0 && this.state.password.length !== 0 ?
-        Api.signInUp(
-            {
-                user: this.state.name,
-                password: this.state.password
-            }, 'login') :
+        this.signConfirm() :
+        // Api.signInUp(
+        //     {
+        //         user: this.state.name,
+        //         password: this.state.password
+        //     }, 'login') :
         alert('Enter correct login and password');
+
+
+        
         // console.log('this.state.name', this.state.name)
         // console.log('this.state.password', this.state.password)
         // Api.signInUp(

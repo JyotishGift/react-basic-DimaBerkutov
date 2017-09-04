@@ -4,11 +4,11 @@
   grid-template-columns: 70fr 30fr;
 }
 
-.book-active {
+.dish-active {
   grid-column: 1;
 }
 
-.book-list {
+.dish-list {
   grid-column: 2;
   text-align: left;
 }

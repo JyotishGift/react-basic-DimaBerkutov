@@ -1,7 +1,7 @@
-const searchBook = (value) => {
+const searchDish = (value) => {
     return {
-      type: 'BOOKS_SEARCH',
+      type: 'DISHES_SEARCH',
       data: value
     };
 }
-export default searchBook;
+export default searchDish;

@@ -1,13 +1,17 @@
 import { combineReducers } from 'redux';
 
-import selectedbookReducer from './reducer_selectedbook';
-import booksReducer from './reducer_books';
+import selectedDishReducer from './reducer_selectedDish';
+import dishesReducer from './reducer_dishes';
+import selectDishIngridientsReducer from './reducer_ingridients';
 import searchReducer from './reducer_search';
+import addDishReducer from './reducer_addDish';
 
 const rootReducer = combineReducers({
-    selectedBook: selectedbookReducer,
-    books: booksReducer,
-    searchBooks: searchReducer
+    selectedDish: selectedDishReducer,
+    dishes: dishesReducer,
+    ingridients: selectDishIngridientsReducer,
+    searchDishes: searchReducer,
+    addDishes: addDishReducer
 })
 
 

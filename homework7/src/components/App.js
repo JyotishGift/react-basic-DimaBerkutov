@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import BookActive from './BookActive';
-import BookList from './BookList';
+import DishActive from './BookActive';
+import DishesList from './DishesList';
 import Search from './Search';
 
 class App extends Component {
@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <Search />
-        <BookActive />
-        <BookList />
+        <DishActive />
+        <DishesList />
       </div>
     );
   }

@@ -1,8 +1,7 @@
-const selectBook = (book) => {
-  console.log('book', book)
+const selectDish = (dish) => {
   return {
-      type: 'BOOK_SELECT',
-      data: book
+      type: 'DISH_SELECT',
+      data: dish
   };
 }
-export default selectBook;
+export default selectDish;

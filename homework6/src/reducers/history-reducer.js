@@ -1,4 +1,5 @@
-const historyReducer = (state = { historyBlock: [1000, 2000] }, action) => {
+const historyReducer = (state = { historyBlock: [] }, action) => {
+    console.log(state)
     console.log(action)
     return { ...state, historyBlock: state.historyBlock }
 };

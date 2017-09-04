@@ -2,23 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-// import searchBook from '../actions/search';
-import searchBook from '../actions/search';
+import searchDish from '../actions/search';
 
 class Search extends Component {
     render() {
-        const { books, searchBook } = this.props;        
+        const { dishes, searchDish } = this.props;        
         return (
             <div>
                 <input onChange={(e) => {
-                    {/* const search = e.target.value;
-                    console.log('books', books)
-                    const searchBooksArr = books.filter(elem => {
-                        return elem.name.slice(0, search.length) == search;
-                    })
-                    console.log('searchBooksArr', searchBooksArr); */}
-                    searchBook(e.target.value);
-                }} className="searchInput" type="text" />
+                    searchDish(e.target.value);
+                }} type="text" placeholder="search"/>
             </div>
         );
     }
@@ -27,13 +20,13 @@ class Search extends Component {
 const mapStateToProps = state => {
     console.log(state)
     return {
-        books: state.books,
-        searchBooks: state.searchBooks
+        dishes: state.dishes,
+        searchDishes: state.searchDishes
     };
 };
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
-    { searchBook: searchBook },
+    { searchDish: searchDish },
     dispatch
   );
 };
