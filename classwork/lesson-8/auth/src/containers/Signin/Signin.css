@@ -1,0 +1,21 @@
+.Signin {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 2px solid teal;
+}
+
+.Signin input {
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid gray;
+  margin: 5px;
+}
+
+.Signin .controls {
+  display: flex;
+  flex-direction: row;
+}
+
+.controls :first-child {
+  margin-right: 5px;
+}

@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 10fr 60fr auto;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+  color: #000;
+}
+
+.fieldset {
+  position: relative;
+}
+
+input:focus,
+input:valid {
+  outline: none;
+}
+
+button {
+  border: none;
+  padding: 10px 16px;
+  background: #337ab7;
+  color: #fff;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1rem;
+}
