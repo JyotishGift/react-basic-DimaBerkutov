@@ -1,0 +1,14 @@
+.Signup {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: 2px solid teal;
+}
+
+.Signup input {
+  font-size: 1.5rem;
+  border: none;
+  border-bottom: 1px solid gray;
+  margin: 5px;
+  display: block;
+}
+

@@ -1,0 +1,9 @@
+.Main {
+  display: flex;
+  grid-row: 2;
+  grid-column: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.15rem;
+  flex-direction: column;
+}
